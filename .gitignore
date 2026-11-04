@@ -1,0 +1,8 @@
+__pycache__/
+.claude/settings.local.json
+# your real prospect data stays out of git
+outputs/*
+!outputs/.gitkeep
+deals/*
+!deals/_template.md
+knowledge_raw/
