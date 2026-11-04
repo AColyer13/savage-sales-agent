@@ -25,6 +25,9 @@ Searched again for Justin's public material on inbound ranking, Hero's Journey a
 Inbound ranking 1-5 is reconstructed from generic lead-scoring guides (e.g. https://sellingsignals.com/lead-scoring, https://impactplus.com/how-lead-scoring-works-why-you-need-it) and sits in playbook 08, labeled not-course.
 Hero's Journey in sales decks (customer = hero, seller = mentor): https://fluint.io/resources/value-story-framework ; none maps the 12 stages to champions, so that mapping stays inferred.
 
+## Execution habits supplement (playbook 11)
+Adapted from a publicly hosted internal operations guide of a video-production company (a PDF found on a public CDN; one organization's practices, anecdotal). Translated to selling and paraphrased; its people-ranking culture and extreme-hours mindset were deliberately left out.
+
 ## My own inferences (flagged, not sourced)
 - The deal-inspection scale choice (26+/21-25/15-20/<15 for 30 questions).
 - The "hero" step wording in 06-business-case.md.

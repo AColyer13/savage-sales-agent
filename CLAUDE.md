@@ -15,7 +15,7 @@ run discovery, inspect deals, and win more of them, using ONLY the playbook in `
 4. Check `deals/` for existing deal files before working on a named deal; update them with `/deal-log` after meaningful changes.
 
 ## Sources: course vs supplement
-Playbooks 01-07 are the Beautiful Savage course. Playbooks 08-09 are **supplements from general best practice, not the course**
+Playbooks 01-07 are the Beautiful Savage course. Playbooks 08, 09 and 11 are **supplements from general best practice, not the course**
 (outreach emails, champion test, negotiation give-gets, forecasting, battlecards, renewals). When you use supplement advice, say so,
 and where it conflicts with the course, the course wins. Benchmarks in the supplements are directional, not proven. See `SOURCES.md`.
 
@@ -31,6 +31,7 @@ and where it conflicts with the course, the course wins. Benchmarks in the suppl
 | `playbook/07-territory-and-skills.md` | ICP, personas, customer journey, funnel math, DMAIC, QBR/territory plan, mindset |
 | `playbook/10-foundations-and-calendar.md` | Purpose, clarity, gratitude, cost of inaction exercises; the 60/25/5/10 calendar framework |
 | `playbook/08-supplement-outreach.md` | SUPPLEMENT: cold email/LinkedIn/voicemail, recap email |
+| `playbook/11-supplement-execution-habits.md` | SUPPLEMENT: bottleneck check-ins, critical components, first-minute/midpoint, options-not-questions, risk reporting |
 | `playbook/09-supplement-deal-mechanics.md` | SUPPLEMENT: champion test, multi-threading, negotiation give-gets, forecasting, battlecards, renewals |
 Raw extracted source files are in `knowledge_raw/` if exact wording is needed.
 

@@ -24,7 +24,7 @@ This is a **CLI-only tool**: no GUI, web app or server. It runs in your terminal
 
 ## Layout
 - `profile.md` your business (blank until `/setup`); `profile.template.md` blank copy; `examples/profile.example.md` fictional practice profile
-- `playbook/01-07` and `10` the course; `playbook/08-09` supplements (NOT the course)
+- `playbook/01-07` and `10` the course; `playbook/08-09` and `11` supplements (NOT the course)
 - `deals/` one file per deal (agent memory); `outputs/` everything it generates
 - `knowledge_raw/` text extracted from your course files; `SOURCES.md` what came from where
 
