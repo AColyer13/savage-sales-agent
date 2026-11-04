@@ -56,5 +56,5 @@ yes/no and a specific fix per "no". Save longer deliverables to `outputs/` (call
 deal inspections, QBR drafts) and tell the user the path.
 
 ## Slash commands (in `.claude/commands/`)
-`/setup` `/icp` `/persona` `/call-prep` `/cold-script` `/outreach` `/objection` `/discovery-plan` `/grade-call` `/recap-email`
+`/setup` `/icp` `/persona` `/persona-gen` `/call-prep` `/cold-script` `/outreach` `/objection` `/discovery-plan` `/grade-call` `/recap-email`
 `/inspect-deal` `/deal-log` `/map` `/business-case` `/negotiate` `/forecast` `/battlecard` `/territory-plan` `/roleplay` `/foundations` `/week-plan` `/help`

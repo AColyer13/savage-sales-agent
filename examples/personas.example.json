@@ -1,0 +1,38 @@
+{
+  "_note": "PRACTICE MODE: fictional BrightChair dental example. Generated personas are hypotheses until you review them and set approved to true.",
+  "market": "Independent dental practices (fictional example)",
+  "personas": [
+    {
+      "id": "owner-dentist",
+      "name": "Owner dentist",
+      "approved": false,
+      "title_include": ["owner", "dentist", "dds", "dmd", "practice owner", "principal"],
+      "title_exclude": ["associate", "student", "assistant", "hygienist", "intern"],
+      "seniority": ["owner", "founder", "president"],
+      "industries": ["dental", "dentistry", "health care"],
+      "employee_min": 3,
+      "employee_max": 40,
+      "goals": ["fuller schedule", "less revenue lost to no-shows", "less time on admin"],
+      "pains": ["empty chairs from no-shows (hypothesis)", "staff time spent on reminder calls (hypothesis)"],
+      "objections": ["our practice software already sends reminders", "not worth the price"],
+      "angle": "recover appointment revenue lost to no-shows",
+      "evidence": "hypothesis: verify with 3 real customers"
+    },
+    {
+      "id": "office-manager",
+      "name": "Office manager",
+      "approved": false,
+      "title_include": ["office manager", "practice manager", "front office", "patient coordinator"],
+      "title_exclude": ["regional", "corporate", "intern"],
+      "seniority": ["manager", "lead"],
+      "industries": ["dental", "dentistry", "health care"],
+      "employee_min": 3,
+      "employee_max": 40,
+      "goals": ["a smooth schedule", "fewer manual reminder calls"],
+      "pains": ["calling patients by hand (hypothesis)", "another system to learn (hypothesis)"],
+      "objections": ["another system to learn", "no time to set it up"],
+      "angle": "take reminder calls off the front desk with a short setup",
+      "evidence": "hypothesis: verify with 3 real customers"
+    }
+  ]
+}

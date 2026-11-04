@@ -6,3 +6,9 @@ outputs/*
 deals/*
 !deals/_template.md
 knowledge_raw/
+
+# your real market config and contact exports
+automation/personas.json
+matched.csv
+contacts*.csv
+!tests/contacts.sample.csv
