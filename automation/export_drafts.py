@@ -19,7 +19,7 @@ import re
 import sys
 from email.message import EmailMessage
 
-OPT_OUT = re.compile(r"unsubscribe|opt[ -]?out|(won't|will not|wont) (email|contact|message) you|not (email|contact) (you )?again|stop (emailing|these)|remove you", re.I)
+OPT_OUT = re.compile(r"unsubscribe|opt[ -]?out|(won't|will not|wont) (email|contact|message)( you)?( again)?|not (email|contact) (you )?again|stop (emailing|these)|remove you", re.I)
 PLACEHOLDER = re.compile(r"\[(ADD|TODO|PEER|METRIC)[^\]]*\]", re.I)
 
 
@@ -44,7 +44,7 @@ def check(draft, eligible):
     if PLACEHOLDER.search(subject + "\n" + body):
         problems.append("unresolved [ADD ...] placeholder")
     if body and not OPT_OUT.search(body):
-        problems.append("no opt-out line (add e.g. 'Not relevant? Just reply and I won't email again.')")
+        problems.append("no opt-out line (add e.g. 'Not relevant? Just reply and I won't email you again.')")
     if re.search(r"[\r\n]", subject):
         problems.append("newline in subject")
     return problems
