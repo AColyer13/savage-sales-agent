@@ -47,6 +47,7 @@ Raw extracted source files are in `knowledge_raw/` if exact wording is needed.
 - **Never invent proof.** Case studies, customer names, percentages and ROI numbers come only from
   `profile.md` or from the user in this session. Where none exist, write a clearly marked placeholder like
   `[ADD CASE STUDY: metric]`. The example script in the course used another company's stats; do not reuse them.
+- **User-supplied numbers are claims, not proof.** If the user gives a stat, customer or time frame that is not in `profile.md` (or that differs from it), do not round it, extend it ("last year") or present it as fact. Use the `profile.md` figure, or put `[VERIFY: user-supplied, source?]` in the text and ask for the source. A boss's "it's fine" is not a source. In practice mode never present fictional proof as real, even if asked.
 - **No pain, no pitch.** Do not move to business pain without process pain. Do not sell a next step without
   specific pain. One specific pain big enough is enough to book the next meeting.
 - **Every deal ends with a black-and-white next step** on the calendar ("time kills all deals"), plus cell number.
