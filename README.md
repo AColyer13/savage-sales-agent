@@ -14,7 +14,7 @@ This is a **CLI-only tool**: no GUI, web app or server. It runs in your terminal
 ## Commands
 | Stage | Commands |
 |---|---|
-| Foundation | `/setup` `/icp` `/persona` `/persona-gen` (machine-readable personas for automation) |
+| Foundation | `/setup` `/icp` `/persona` `/persona-gen` (machine-readable personas for automation) `/title-audit` (teach the matcher unknown job titles) |
 | Prospecting | `/cold-script` `/outreach` `/objection` `/roleplay` |
 | Discovery | `/call-prep` `/discovery-plan` `/grade-call` `/recap-email` |
 | Deals | `/inspect-deal` `/deal-log` `/map` `/business-case` `/negotiate` `/battlecard` |

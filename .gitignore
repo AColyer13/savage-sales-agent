@@ -9,6 +9,9 @@ knowledge_raw/
 
 # your real market config and contact exports
 automation/personas.json
+automation/title_rules.json
+automation/title_review.jsonl
+automation/title_regressions.json
 matched.csv
 contacts*.csv
 !tests/contacts.sample.csv
