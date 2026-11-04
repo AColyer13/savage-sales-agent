@@ -14,10 +14,10 @@ A critical component is something that, if it fails, there is no deal (signer, b
 - Raise problems the moment you see them, and bring your manager in earlier rather than later.
 - Don't coin-flip a critical component: if it is 50/50, work another route in parallel.
 
-## 3. The first minute and the midpoint
-People leave early. Spend your best material at the start and re-engage in the middle.
+## 3. The first 30 seconds of a call and a midpoint check-in during a demo
+Buyers decide early whether to stay engaged. Earn the first 30 seconds, then check in at the midpoint.
 - Cold call: the first 30 seconds earn the next 2 minutes. Lead with their world, not yours (course script first).
-- Meeting or demo: show, don't tell. Skip long previews of what you will cover. Around the midpoint, re-engage with something specific to them (a number they gave, a result a similar customer saw, if real and in profile.md).
+- Meeting or demo: show, don't tell. Skip long previews of what you will cover. At the midpoint, do a check-in: ask "Is this what you expected? What's most relevant so far?" and tie back to something specific to them (a number they gave, a result a similar customer saw, if real and in profile.md).
 - Don't signal the end early. Close on a clear next step.
 
 ## 4. Match the promise
@@ -47,5 +47,5 @@ One no from one person is data, not a verdict. Before closing a lead out: is it 
 - Build slack into close dates for the steps you don't control.
 - When price is the objection, look for creative trades before a discount (scope, term, timing, reference value; see playbook 09).
 - After a lost deal, write a 5-line post-mortem: what happened, the earliest warning sign, what you would do differently.
-- Compare a call to your last nine calls, not to a perfect ideal.
-- Read and watch what your buyers read and watch (their industry news, their social feeds).
+- Compare against your last nine calls: look at your own pattern (opener, questions asked, next step secured), not a perfect ideal.
+- Read and watch what your buyers read and watch (their trade publications, industry news, LinkedIn feeds, podcasts) so you can speak their language and spot triggers.
