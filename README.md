@@ -4,12 +4,20 @@ A sales coach and assistant built on the Beautiful Savage Sales Academy method, 
 
 This is a **CLI-only tool**: no GUI, web app or server. It runs in your terminal through Claude Code.
 
-## Start
-1. Run `savage.cmd` in this folder (or open a terminal here and run `claude`).
-   To run it from anywhere, add this folder to your PATH once, then just type `savage`.
-   One-shot use also works: `savage -p "/objection \"we already have a tool\""` prints the answer and exits.
-2. Run `/setup`. Not selling anything yet? Choose practice mode (fictional company) to try everything.
-3. Try: `/cold-script`, `/call-prep`, `/objection "we already have a tool for that"`, `/roleplay cold call to an owner`.
+## What you need
+- [Claude Code](https://docs.claude.com/en/docs/claude-code/setup) installed and signed in (a Claude account is required)
+- Python 3.9+ (only for the setup check and the optional contact-matching tools; no packages to install)
+
+## Start (guided)
+1. Download or clone this repo and open a terminal in the folder.
+2. Run the launcher. It checks your computer, tells you exactly what is missing, then opens the agent and walks you through setup:
+   - Windows: `savage.cmd`
+   - macOS / Linux: `sh savage.sh`
+   - or anywhere: `python setup.py`
+3. The agent asks whether you are selling something (real setup) or want **practice mode** (a fictional company) to try everything first.
+4. Next time the same launcher opens the agent directly. `python setup.py --check` re-runs the checks any time.
+   One-shot use works after setup: `savage -p "/objection \"we already have a tool\""`.
+5. Try: `/cold-script`, `/call-prep`, `/objection "we already have a tool for that"`, `/roleplay cold call to an owner`.
 
 ## Commands
 | Stage | Commands |
@@ -26,13 +34,14 @@ This is a **CLI-only tool**: no GUI, web app or server. It runs in your terminal
 - `profile.md` your business (blank until `/setup`); `profile.template.md` blank copy; `examples/profile.example.md` fictional practice profile
 - `playbook/01-07` and `10` the course; `playbook/08-09` and `11` supplements (NOT the course)
 - `deals/` one file per deal (agent memory); `outputs/` everything it generates
-- `knowledge_raw/` text extracted from your course files; `SOURCES.md` what came from where
+- `setup.py`, `savage.cmd`, `savage.sh` guided first-run and launchers; `SOURCES.md` what came from where
 
 ## Known limits
 - Headless-tested 19 of 21 commands against the practice profile (rules held: no invented proof, honest scoring). `/week-plan` also tested OK; `/foundations` is interactive and untested. Expect to refine wording after real use.
 - Course recordings aren't included; the "hero" step of the business case is inferred (see SOURCES.md).
 - Supplement benchmarks (email length, reply rates, coverage ratios) are vendor-sourced and directional.
 - It drafts; you send. It never contacts anyone.
+- Gmail / HubSpot integration is **not built yet**. Planned, in stages: drafts only, then an approval queue. Each user would bring their own credentials; none are ever stored in this repo.
 
 ## Privacy
 `outputs/` and `deals/` (your real prospects) are git-ignored, as is `knowledge_raw/` (local extracts of the paid course files, not published). Unofficial: not affiliated with or endorsed by Justin Jay Johnson or the Beautiful Savage Sales Academy; the playbooks are the author's own notes, plus labeled general best practice.

@@ -1,8 +1,8 @@
 # Sources and what is what
 
-## From the Beautiful Savage Sales Academy (your files)
-Playbooks 01-07 and 10 are distilled from your OneDrive\Sales Academy folder (text notes, Word, PDF, Excel, PowerPoint, and two images).
-Raw extractions are in `knowledge_raw/` (text only). On the second pass I rendered the image-heavy PDF pages and looked at them: this recovered the "HERO" step (an image of The Hero's Journey) and the example "Day in the Life" calendar. The PowerPoint was re-checked for hidden tables/notes/images (none of substance); the MAP Guide is only a cropped screenshot of the template.
+## From the Beautiful Savage Sales Academy (the author's course materials)
+Playbooks 01-07 and 10 were distilled by the author from their own course notes (text notes, Word, PDF, Excel, PowerPoint, and two images).
+Raw extractions were kept locally by the author in `knowledge_raw/` and are not part of this repository. On the second pass I rendered the image-heavy PDF pages and looked at them: this recovered the "HERO" step (an image of The Hero's Journey) and the example "Day in the Life" calendar. The PowerPoint was re-checked for hidden tables/notes/images (none of substance); the MAP Guide is only a cropped screenshot of the template.
 Known remaining gaps: course videos/recordings (only links), the "inbound ranking 1-5" chart referenced in the Tuesday notes (not in the folder), and Justin's own wording for the Hero's Journey mapping (my mapping is inferred).
 
 ## Looked for publicly, mostly not found

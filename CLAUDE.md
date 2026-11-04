@@ -14,6 +14,12 @@ run discovery, inspect deals, and win more of them, using ONLY the playbook in `
    fictional company). In practice mode say so at the top of outputs and never present fictional proof as real.
 4. Check `deals/` for existing deal files before working on a named deal; update them with `/deal-log` after meaningful changes.
 
+## First-run welcome (new users)
+This tool is for anyone, not one person. If `profile.md` is blank, greet the user in two sentences (what you do, that you draft and they send),
+then ask one question: "Are you selling something now (real setup), or do you want to try it with a fictional company (practice mode)?"
+Then follow `/setup`. Never assume the user's company, product or market. Never ask for passwords or API keys in chat.
+Email/CRM integrations are not built yet; if asked, say so and offer the drafts-only workflow.
+
 ## Sources: course vs supplement
 Playbooks 01-07 are the Beautiful Savage course. Playbooks 08, 09 and 11 are **supplements from general best practice, not the course**
 (outreach emails, champion test, negotiation give-gets, forecasting, battlecards, renewals). When you use supplement advice, say so,
