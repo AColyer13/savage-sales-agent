@@ -58,3 +58,7 @@ Tests: `python -m unittest discover -s tests`
 4. Safety asymmetry: `exclude` and `ambiguous` (fewer contacts eligible) the agent may apply by itself. `include` (more contacts eligible) needs your yes, and the tool refuses without `--confirmed-by-user`.
 5. The agent never edits `approved` flags and never sends anything.
 The matcher itself makes no AI call. The "thinking" happens when `/title-audit` runs (by hand now; it can be scheduled later in the autopilot job).
+
+## Enabling unattended /title-audit (optional, your decision)
+Interactive use just prompts you. A scheduled run needs permission to run the three tools above. `automation/settings.suggested.json` lists exactly those commands and nothing else. To turn it on, copy it yourself:
+`copy automation\settings.suggested.json .claude\settings.json` (then delete the `_note` line if you like).

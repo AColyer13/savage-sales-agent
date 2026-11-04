@@ -1,0 +1,13 @@
+{
+  "_note": "NOT ACTIVE. Copy to .claude/settings.json to let scheduled/headless runs execute only these three commands without a prompt.",
+  "permissions": {
+    "allow": [
+      "Bash(python automation/match_persona.py:*)",
+      "Bash(python automation/audit_titles.py:*)",
+      "Bash(python -m unittest discover -s tests)",
+      "PowerShell(python automation/match_persona.py:*)",
+      "PowerShell(python automation/audit_titles.py:*)",
+      "PowerShell(python -m unittest discover -s tests)"
+    ]
+  }
+}
