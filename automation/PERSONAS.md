@@ -15,6 +15,7 @@
 | `employee_min`, `employee_max` | optional company size range. A known size outside the range caps confidence below "high". |
 | `goals`, `pains`, `objections` | messaging inputs. Hypotheses until verified with real customers. |
 | `angle` | one-sentence message angle |
+| `awareness_stage` | optional: unaware, problem-aware, solution-aware or product-aware (a hypothesis; see playbook 12). Ignored by the matcher, used for message writing |
 | `evidence` | where the claims come from; default "hypothesis: verify with 3 real customers" |
 
 ## Scoring (deterministic, 0 to 1)
