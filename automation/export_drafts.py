@@ -24,7 +24,7 @@ import sys
 from email.message import EmailMessage
 
 OPT_OUT = re.compile(r"unsubscribe|opt[ -]?out|(won't|will not|wont) (email|contact|message)( you)?( again)?|not (email|contact) (you )?again|stop (emailing|these)|remove you", re.I)
-PLACEHOLDER = re.compile(r"\[(ADD|TODO|PEER|METRIC)[^\]]*\]", re.I)
+PLACEHOLDER = re.compile(r"\[[^\]" + chr(10) + r"]{2,}\]")  # any [bracketed text] left in a draft
 
 
 def load_eligible(path):
@@ -46,7 +46,7 @@ def check(draft, eligible):
     if not body:
         problems.append("empty body")
     if PLACEHOLDER.search(subject + "\n" + body):
-        problems.append("unresolved [ADD ...] placeholder")
+        problems.append("unresolved [bracketed] placeholder (fill it in, e.g. your name)")
     if body and not OPT_OUT.search(body):
         problems.append("no opt-out line (add e.g. 'Not relevant? Just reply and I won't email you again.')")
     if re.search(r"[\r\n]", subject):
