@@ -23,7 +23,7 @@ This is a **CLI-only tool**: no GUI, web app or server. It runs in your terminal
 | Stage | Commands |
 |---|---|
 | Foundation | `/setup` `/icp` `/persona` `/persona-gen` (machine-readable personas for automation) `/title-audit` (teach the matcher unknown job titles) |
-| Prospecting | `/cold-script` `/outreach` `/draft-batch` (one draft per approved contact, never sends) `/voc` (mine buyer wording) `/trends` (research marketing trends, adopt the ones you trust) `/campaign` (value-first email series: send each persona a sourced insight, drafts only) `/objection` `/roleplay` |
+| Prospecting | `/cold-script` `/outreach` `/draft-batch` (one draft per approved contact, never sends) `/voc` (mine buyer wording) `/trends` (research marketing trends, adopt the ones you trust) `/campaign` (value-first email series: send each persona a sourced insight, drafts only) `/log-results` (tell it who replied, bounced or opted out; they are never drafted again) `/objection` `/roleplay` |
 | Discovery | `/call-prep` `/discovery-plan` `/grade-call` `/recap-email` |
 | Deals | `/inspect-deal` `/deal-log` `/map` `/business-case` `/negotiate` `/battlecard` |
 | Planning | `/forecast` `/territory-plan` `/week-plan` |

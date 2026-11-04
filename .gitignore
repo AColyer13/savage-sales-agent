@@ -17,3 +17,5 @@ contacts*.csv
 !tests/contacts.sample.csv
 .savage_setup_done
 trends/trends.json
+automation/suppression.csv
+automation/outcomes.csv

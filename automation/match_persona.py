@@ -24,6 +24,9 @@ HIGH, MEDIUM = 0.70, 0.50
 CAP_MEDIUM = HIGH - 0.01          # 0.69: can never be "high"
 CAP_NONE = MEDIUM - 0.01          # 0.49: no persona
 AMBIGUOUS_GAP = 0.10
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import outreach_state as state  # noqa: E402
+
 HERE = os.path.dirname(os.path.abspath(__file__))
 DEFAULT_RULES = os.path.join(HERE, "title_rules.json")
 DEFAULT_QUEUE = os.path.join(HERE, "title_review.jsonl")
@@ -252,9 +255,15 @@ def main(argv=None):
     rules = load_rules(args.rules)
     with open(args.contacts, newline="", encoding="utf-8-sig") as f:
         rows = [{(k or "").strip().lower(): v for k, v in r.items()} for r in csv.DictReader(f)]
+    sup_rows, out_rows = state.load_suppression(), state.load_outcomes()
     out, queued = [], 0
     for r in rows:
         res = match(r, personas, rules)
+        blocked = state.blocked_reason(r.get("email", ""), sup_rows, out_rows)
+        if blocked:
+            res["eligible"] = False
+            res["flags"] = ",".join(f for f in (res["flags"], "blocked") if f)
+            res["reason"] = f"{res['reason']}; BLOCKED: {blocked}"
         if res["audit_needed"] and not args.no_queue and queue_for_audit(r, res, args.queue):
             queued += 1
         out.append({**r, **res})

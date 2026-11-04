@@ -23,6 +23,9 @@ import re
 import sys
 from email.message import EmailMessage
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import outreach_state as state  # noqa: E402  (suppression list + outcome log)
+
 OPT_OUT = re.compile(r"unsubscribe|opt[ -]?out|(won't|will not|wont) (email|contact|message)( you)?( again)?|not (email|contact) (you )?again|stop (emailing|these)|remove you", re.I)
 PLACEHOLDER = re.compile(r"\[[^\]" + chr(10) + r"]{2,}\]")  # any [bracketed text] left in a draft
 
@@ -90,7 +93,8 @@ def campaign_problems(draft, history, campaign, issue, min_days, today):
     return probs
 
 
-def export(matched_csv, drafts_json, outdir, sender=None, campaign=None, issue=None, min_days=7, today=None):
+def export(matched_csv, drafts_json, outdir, sender=None, campaign=None, issue=None, min_days=7, today=None,
+           sup_path=None, out_path=None):
     today = today or datetime.date.today()
     eligible = load_eligible(matched_csv)
     with open(drafts_json, encoding="utf-8") as f:
@@ -98,10 +102,14 @@ def export(matched_csv, drafts_json, outdir, sender=None, campaign=None, issue=N
     os.makedirs(outdir, exist_ok=True)
     path = os.path.join(outdir, "drafts_log.csv")
     history = load_log(path)
+    sup_rows, out_rows = state.load_suppression(sup_path), state.load_outcomes(out_path)
     log, refused = [], []
     n = len(history)
     for d in drafts:
         probs = check(d, eligible)
+        blocked = state.blocked_reason(str(d.get("email", "")), sup_rows, out_rows)
+        if blocked:
+            probs.append("blocked: " + blocked)
         if campaign:
             probs += campaign_problems(d, history + log, campaign, issue, min_days, today)
         elif not probs:
