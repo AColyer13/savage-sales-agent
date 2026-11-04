@@ -4,6 +4,9 @@
 Input 1: matched.csv from match_persona.py (only rows with eligible=True may get a draft).
 Input 2: drafts JSON: [{"email": ..., "subject": ..., "body": ...}, ...] written by /draft-batch.
 
+Campaign mode (--campaign NAME --issue N): each body must cite a source URL, the same issue is never drafted twice for a contact,
+and a contact gets at most one draft per --min-days (default 7), also outside campaign mode.
+
 Output: <outdir>/NNN-<slug>.eml  (X-Unsent: 1 so Outlook / Apple Mail / Thunderbird open it as an editable draft)
         <outdir>/drafts_log.csv   (email, subject, persona, file, status) for logging or CRM import.
 Each draft is refused if the contact is not eligible, an [ADD ...] placeholder is unresolved, the subject or body is empty,
@@ -13,6 +16,7 @@ or the body has no opt-out line. Postal-address and law compliance are the sende
 """
 import argparse
 import csv
+import datetime
 import json
 import os
 import re
@@ -54,15 +58,54 @@ def slug(s):
     return re.sub(r"[^a-z0-9]+", "-", s.lower()).strip("-")[:40] or "draft"
 
 
-def export(matched_csv, drafts_json, outdir, sender=None):
+FIELDS = ["date", "email", "subject", "persona", "campaign", "issue", "file", "status"]
+URL = re.compile(r"https?://[^\s/]+\.[^\s]+")
+
+
+def load_log(path):
+    if not os.path.exists(path):
+        return []
+    with open(path, newline="", encoding="utf-8") as f:
+        return list(csv.DictReader(f))
+
+
+def campaign_problems(draft, history, campaign, issue, min_days, today):
+    """Extra checks for newsletter/nurture drafts: traceable source, no duplicate issue, no over-mailing."""
+    probs = []
+    email = str(draft.get("email", "")).strip().lower()
+    if not URL.search(str(draft.get("body", ""))):
+        probs.append("campaign emails must cite a source URL for the insight they share")
+    for h in history:
+        if h.get("email") != email:
+            continue
+        if campaign and h.get("campaign") == campaign and str(h.get("issue")) == str(issue):
+            probs.append(f"issue {issue} of '{campaign}' was already drafted for this contact")
+        try:
+            age = (today - datetime.date.fromisoformat(h.get("date", ""))).days
+        except ValueError:
+            continue
+        if age < min_days:
+            probs.append(f"this contact already has a draft from {age} day(s) ago (minimum gap {min_days})")
+            break
+    return probs
+
+
+def export(matched_csv, drafts_json, outdir, sender=None, campaign=None, issue=None, min_days=7, today=None):
+    today = today or datetime.date.today()
     eligible = load_eligible(matched_csv)
     with open(drafts_json, encoding="utf-8") as f:
         drafts = json.load(f)
     os.makedirs(outdir, exist_ok=True)
+    path = os.path.join(outdir, "drafts_log.csv")
+    history = load_log(path)
     log, refused = [], []
-    n = 0
+    n = len(history)
     for d in drafts:
         probs = check(d, eligible)
+        if campaign:
+            probs += campaign_problems(d, history + log, campaign, issue, min_days, today)
+        elif not probs:
+            probs += [x for x in campaign_problems(d, history + log, None, None, min_days, today) if "already has a draft" in x]
         if probs:
             refused.append((d.get("email", "?"), probs))
             continue
@@ -74,17 +117,17 @@ def export(matched_csv, drafts_json, outdir, sender=None):
             msg["From"] = sender
         msg["Subject"] = d["subject"].strip()
         msg["X-Unsent"] = "1"
-        msg.set_content(d["body"].strip() + "\n")
+        msg.set_content(d["body"].strip() + chr(10))
         fname = f"{n:03d}-{slug(email.split('@')[0])}.eml"
         with open(os.path.join(outdir, fname), "wb") as f:
             f.write(bytes(msg))
-        log.append({"email": email, "subject": d["subject"].strip(),
-                    "persona": eligible[email].get("persona", ""), "file": fname, "status": "drafted_not_sent"})
-    path = os.path.join(outdir, "drafts_log.csv")
+        log.append({"date": today.isoformat(), "email": email, "subject": d["subject"].strip(),
+                    "persona": eligible[email].get("persona", ""), "campaign": campaign or "",
+                    "issue": issue if issue is not None else "", "file": fname, "status": "drafted_not_sent"})
     with open(path, "w", newline="", encoding="utf-8") as f:
-        w = csv.DictWriter(f, fieldnames=["email", "subject", "persona", "file", "status"])
+        w = csv.DictWriter(f, fieldnames=FIELDS, extrasaction="ignore")
         w.writeheader()
-        w.writerows(log)
+        w.writerows(history + log)
     return log, refused
 
 
@@ -94,8 +137,13 @@ def main(argv=None):
     ap.add_argument("drafts_json")
     ap.add_argument("--outdir", default="outputs/drafts")
     ap.add_argument("--from", dest="sender", default=None)
+    ap.add_argument("--campaign", help="campaign name; turns on source-URL, duplicate-issue and spacing checks")
+    ap.add_argument("--issue", type=int, help="issue number within the campaign")
+    ap.add_argument("--min-days", type=int, default=7, help="minimum days between drafts to the same contact")
     a = ap.parse_args(argv)
-    log, refused = export(a.matched_csv, a.drafts_json, a.outdir, a.sender)
+    if a.campaign and a.issue is None:
+        ap.error("--campaign needs --issue")
+    log, refused = export(a.matched_csv, a.drafts_json, a.outdir, a.sender, a.campaign, a.issue, a.min_days)
     print(f"{len(log)} drafts written to {a.outdir} (nothing was sent), {len(refused)} refused")
     for email, probs in refused:
         print(f"  REFUSED {email}: " + "; ".join(probs))

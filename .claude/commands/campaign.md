@@ -1,0 +1,18 @@
+---
+description: Plan and draft a value-first email series that sends each persona information relevant to their business (drafts only)
+argument-hint: <campaign name, persona id, and number of issues e.g. "dental-tips owner-dentist 4">  or "next <campaign>" for the next issue
+---
+Read profile.md, automation/PERSONAS.md, automation/personas.json, playbook/12-supplement-cold-email-craft.md and playbook/13-supplement-marketing-trends.md (if it exists). Input: $ARGUMENTS
+Idea: instead of pitching, send the persona one genuinely useful, sourced insight per issue so the sender earns attention before asking for anything. Insight sources, in order: (1) trends the user ADOPTED in playbook 13, (2) the user's own proof and experience in profile.md, (3) public sources you open and cite now. Never use an unadopted trend, an invented statistic or an uncited claim.
+
+**Plan first** (if no plan exists in outputs/campaign-<name>.md): 4-6 issues, one weekly, each with: the persona's problem it speaks to (from personas.json pains, marked as hypothesis), the single insight and its source URL + date, the "so what for your practice/team" takeaway, and a soft optional ask (a question they can answer in one line; a meeting ask only in the last issue and only if they replied or clicked before). Mark what comes from the course versus supplements. Show the plan and wait for my yes.
+
+**Draft an issue** (after my yes, or for "next <name>"):
+1. Need a matched.csv from the matcher; use ONLY eligible=True rows for that persona. Cap 25 contacts per run.
+2. Each email: under about 120 words, plain text, subject that matches content, one insight with `Source: <URL>` on its own line, one takeaway in their business terms, one optional low-pressure question, an opt-out line ("Not useful? Reply and I won't email you again.").
+3. Personalize only with CSV facts (first name, company, title). Never claim you know something about their business you don't.
+4. Write the drafts JSON to outputs/campaign-<name>-issue-<n>.json and run:
+   `python automation/export_drafts.py <matched.csv> outputs/campaign-<name>-issue-<n>.json --outdir outputs/drafts --campaign <name> --issue <n> [--from <my address>]`
+   The tool refuses duplicates of the same issue, emails without a source URL, and any contact drafted within the last 7 days; report each refusal, do not work around it.
+5. Remind me: I need a legitimate basis to email these people (existing relationship, or a relevant business interest where the law of their country allows it, and honouring opt-outs), a postal address in the footer where required, and my own sending tool for volume (a personal mailbox has daily limits). I am responsible for compliance. Anyone who replies "stop" must be removed from every future issue.
+You draft; I send. Never send, schedule or contact anyone. Save a summary of what was drafted to outputs/campaign-<name>.md.
