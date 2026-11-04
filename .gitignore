@@ -16,3 +16,4 @@ matched.csv
 contacts*.csv
 !tests/contacts.sample.csv
 .savage_setup_done
+trends/trends.json

@@ -2,7 +2,7 @@
 description: Draft one personalized email per matched, approved contact (drafts only, nothing is sent)
 argument-hint: <path to matched.csv from the matcher, optional extra instructions>
 ---
-Read profile.md, automation/PERSONAS.md, automation/personas.json, playbook/08-supplement-outreach.md and playbook/12-supplement-cold-email-craft.md. Input: $ARGUMENTS
+Read profile.md, automation/PERSONAS.md, automation/personas.json, playbook/08-supplement-outreach.md and playbook/12-supplement-cold-email-craft.md (and playbook/13-supplement-marketing-trends.md if it exists). Input: $ARGUMENTS
 If there is no matched.csv, tell me to run: python automation/match_persona.py <contacts.csv> --personas automation/personas.json --out matched.csv  (HubSpot or any CRM export). If no persona is approved, stop and say so: I approve personas by editing `"approved"` myself.
 1. Take ONLY rows with eligible=True. Cap the batch at 25 per run unless I say otherwise. Skip the rest and say how many were skipped and why (review, ambiguous, unapproved).
 2. For each contact write one short first-touch email using their persona's angle and their first name, company and title. Use only facts present in the CSV or profile.md. Proof only from profile.md, else leave the proof line out (do not write placeholders in a draft I will send). No invented numbers, no invented peers.

@@ -2,7 +2,7 @@
 description: Build my personalized cold call script from the BSSA template
 argument-hint: <target persona/segment, optional pain to lead with>
 ---
-Read profile.md, playbook/02-cold-calling.md, playbook/12-supplement-cold-email-craft.md (voicemail and cadence only) and playbook/11-supplement-execution-habits.md. Build a complete cold call script for: $ARGUMENTS
+Read profile.md, playbook/02-cold-calling.md, playbook/12-supplement-cold-email-craft.md (and playbook/13-supplement-marketing-trends.md if it exists) (voicemail and cadence only) and playbook/11-supplement-execution-habits.md. Build a complete cold call script for: $ARGUMENTS
 Follow the template exactly: getting to the conversation, pain-probing questions (1st-person story, different perspective, DM perspective, layering, concerned tonality),
 all common objection responses filled in for my product, gatekeeper path, qualification questions, closing the next step, setting expectations, post-close cell number ask,
 and an appendix of case studies/data points. Use only proof from profile.md; use [ADD ...] placeholders otherwise and list what I still need to supply.

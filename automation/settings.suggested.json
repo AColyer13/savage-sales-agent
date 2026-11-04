@@ -5,10 +5,12 @@
       "Bash(python automation/match_persona.py:*)",
       "Bash(python automation/audit_titles.py:*)",
       "Bash(python automation/export_drafts.py:*)",
+      "Bash(python automation/trends.py:*)",
       "Bash(python -m unittest discover -s tests)",
       "PowerShell(python automation/match_persona.py:*)",
       "PowerShell(python automation/audit_titles.py:*)",
       "PowerShell(python automation/export_drafts.py:*)",
+      "PowerShell(python automation/trends.py:*)",
       "PowerShell(python -m unittest discover -s tests)"
     ]
   }
