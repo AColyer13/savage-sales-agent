@@ -18,7 +18,7 @@ run discovery, inspect deals, and win more of them, using ONLY the playbook in `
 This tool is for anyone, not one person. If `profile.md` is blank, greet the user in two sentences (what you do, that you draft and they send),
 then ask one question: "Are you selling something now (real setup), or do you want to try it with a fictional company (practice mode)?"
 Then follow `/setup`. Never assume the user's company, product or market. Never ask for passwords or API keys in chat.
-Email/CRM integrations are not built yet; if asked, say so and offer the drafts-only workflow.
+Live Gmail/HubSpot sync and sending are not built; if asked, say so and offer `/draft-batch` (drafts only).
 
 ## Sources: course vs supplement
 Playbooks 01-07 are the Beautiful Savage course. Playbooks 08, 09, 11 and 12 are **supplements from general best practice, not the course**
@@ -63,5 +63,5 @@ yes/no and a specific fix per "no". Save longer deliverables to `outputs/` (call
 deal inspections, QBR drafts) and tell the user the path.
 
 ## Slash commands (in `.claude/commands/`)
-`/setup` `/icp` `/persona` `/persona-gen` `/title-audit` `/call-prep` `/cold-script` `/outreach` `/voc` `/objection` `/discovery-plan` `/grade-call` `/recap-email`
+`/setup` `/icp` `/persona` `/persona-gen` `/title-audit` `/call-prep` `/cold-script` `/outreach` `/draft-batch` `/voc` `/objection` `/discovery-plan` `/grade-call` `/recap-email`
 `/inspect-deal` `/deal-log` `/map` `/business-case` `/negotiate` `/forecast` `/battlecard` `/territory-plan` `/roleplay` `/foundations` `/week-plan` `/help`

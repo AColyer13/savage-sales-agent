@@ -23,7 +23,7 @@ This is a **CLI-only tool**: no GUI, web app or server. It runs in your terminal
 | Stage | Commands |
 |---|---|
 | Foundation | `/setup` `/icp` `/persona` `/persona-gen` (machine-readable personas for automation) `/title-audit` (teach the matcher unknown job titles) |
-| Prospecting | `/cold-script` `/outreach` `/voc` (mine buyer wording) `/objection` `/roleplay` |
+| Prospecting | `/cold-script` `/outreach` `/draft-batch` (one draft per approved contact, never sends) `/voc` (mine buyer wording) `/objection` `/roleplay` |
 | Discovery | `/call-prep` `/discovery-plan` `/grade-call` `/recap-email` |
 | Deals | `/inspect-deal` `/deal-log` `/map` `/business-case` `/negotiate` `/battlecard` |
 | Planning | `/forecast` `/territory-plan` `/week-plan` |
@@ -41,7 +41,11 @@ This is a **CLI-only tool**: no GUI, web app or server. It runs in your terminal
 - Course recordings aren't included; the "hero" step of the business case is inferred (see SOURCES.md).
 - Supplement benchmarks (email length, reply rates, coverage ratios) are vendor-sourced and directional.
 - It drafts; you send. It never contacts anyone.
-- Gmail / HubSpot integration is **not built yet**. Planned, in stages: drafts only, then an approval queue. Each user would bring their own credentials; none are ever stored in this repo.
+- Email/CRM, stage 1 (built): export contacts from HubSpot (or any CRM) as CSV, `/persona-gen`, approve personas, run the matcher, then `/draft-batch` writes reviewable `.eml` drafts (open in Outlook/Apple Mail/Thunderbird) plus a log. Nothing is ever sent, and no credentials or API keys are needed. If you have a Gmail connector in Claude Code it can create Gmail drafts, only after you say yes.
+- Not built: live HubSpot sync, sending, approval queue, scheduling. If added, each user brings their own credentials; none are stored in this repo.
+
+## License
+MIT (see `LICENSE`). The playbooks are the author's own notes; the course itself is not included.
 
 ## Privacy
 `outputs/` and `deals/` (your real prospects) are git-ignored, as is `knowledge_raw/` (local extracts of the paid course files, not published). Unofficial: not affiliated with or endorsed by Justin Jay Johnson or the Beautiful Savage Sales Academy; the playbooks are the author's own notes, plus labeled general best practice.
