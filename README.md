@@ -23,7 +23,7 @@ This is a **CLI-only tool**: no GUI, web app or server. It runs in your terminal
 | Stage | Commands |
 |---|---|
 | Foundation | `/setup` `/icp` `/persona` `/persona-gen` (machine-readable personas for automation) `/title-audit` (teach the matcher unknown job titles) |
-| Prospecting | `/cold-script` `/outreach` `/objection` `/roleplay` |
+| Prospecting | `/cold-script` `/outreach` `/voc` (mine buyer wording) `/objection` `/roleplay` |
 | Discovery | `/call-prep` `/discovery-plan` `/grade-call` `/recap-email` |
 | Deals | `/inspect-deal` `/deal-log` `/map` `/business-case` `/negotiate` `/battlecard` |
 | Planning | `/forecast` `/territory-plan` `/week-plan` |
@@ -32,7 +32,7 @@ This is a **CLI-only tool**: no GUI, web app or server. It runs in your terminal
 
 ## Layout
 - `profile.md` your business (blank until `/setup`); `profile.template.md` blank copy; `examples/profile.example.md` fictional practice profile
-- `playbook/01-07` and `10` the course; `playbook/08-09` and `11` supplements (NOT the course)
+- `playbook/01-07` and `10` the course; `playbook/08-09`, `11` and `12` supplements (NOT the course)
 - `deals/` one file per deal (agent memory); `outputs/` everything it generates
 - `setup.py`, `savage.cmd`, `savage.sh` guided first-run and launchers; `SOURCES.md` what came from where
 

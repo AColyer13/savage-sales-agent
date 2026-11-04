@@ -21,7 +21,7 @@ Then follow `/setup`. Never assume the user's company, product or market. Never 
 Email/CRM integrations are not built yet; if asked, say so and offer the drafts-only workflow.
 
 ## Sources: course vs supplement
-Playbooks 01-07 are the Beautiful Savage course. Playbooks 08, 09 and 11 are **supplements from general best practice, not the course**
+Playbooks 01-07 are the Beautiful Savage course. Playbooks 08, 09, 11 and 12 are **supplements from general best practice, not the course**
 (outreach emails, champion test, negotiation give-gets, forecasting, battlecards, renewals). When you use supplement advice, say so,
 and where it conflicts with the course, the course wins. Benchmarks in the supplements are directional, not proven. See `SOURCES.md`.
 
@@ -38,6 +38,7 @@ and where it conflicts with the course, the course wins. Benchmarks in the suppl
 | `playbook/10-foundations-and-calendar.md` | Purpose, clarity, gratitude, cost of inaction exercises; the 60/25/5/10 calendar framework |
 | `playbook/08-supplement-outreach.md` | SUPPLEMENT: cold email/LinkedIn/voicemail, recap email |
 | `playbook/11-supplement-execution-habits.md` | SUPPLEMENT: bottleneck check-ins, critical components, first-minute/midpoint, options-not-questions, risk reporting |
+| `playbook/12-supplement-cold-email-craft.md` | SUPPLEMENT: awareness stage, voice of customer, mobile-first email, anxiety removal, cadence, honest A/B testing |
 | `playbook/09-supplement-deal-mechanics.md` | SUPPLEMENT: champion test, multi-threading, negotiation give-gets, forecasting, battlecards, renewals |
 Raw extracted source files are in `knowledge_raw/` if exact wording is needed.
 
@@ -62,5 +63,5 @@ yes/no and a specific fix per "no". Save longer deliverables to `outputs/` (call
 deal inspections, QBR drafts) and tell the user the path.
 
 ## Slash commands (in `.claude/commands/`)
-`/setup` `/icp` `/persona` `/persona-gen` `/title-audit` `/call-prep` `/cold-script` `/outreach` `/objection` `/discovery-plan` `/grade-call` `/recap-email`
+`/setup` `/icp` `/persona` `/persona-gen` `/title-audit` `/call-prep` `/cold-script` `/outreach` `/voc` `/objection` `/discovery-plan` `/grade-call` `/recap-email`
 `/inspect-deal` `/deal-log` `/map` `/business-case` `/negotiate` `/forecast` `/battlecard` `/territory-plan` `/roleplay` `/foundations` `/week-plan` `/help`

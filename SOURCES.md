@@ -32,3 +32,6 @@ Adapted from a publicly hosted internal operations guide of a video-production c
 - The deal-inspection scale choice (26+/21-25/15-20/<15 for 30 questions).
 - The "hero" step wording in 06-business-case.md.
 - The "Typical steps" list in the MAP section of 04.
+
+## Cold email craft supplement (playbook 12)
+Synthesized from published ideas of Joanna Wiebe (Copyhackers), Will Allred (Lavender), Chad S. White, Flint McGlaughlin (MECLABS) and Jeb Blount (Sales Gravy), via a user-supplied research summary. Their statistics were not verified and are not repeated as fact; the sample-assistant templates had invented numbers, which were replaced with placeholders (enforced by `tests/test_playbook_claims.py`).
